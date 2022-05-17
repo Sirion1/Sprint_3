@@ -28,4 +28,16 @@ public class Courier {
         return new Courier(login, null, null);
     }
 
+    public static Courier getRandomLoginAndFirstName() {
+        String login = RandomStringUtils.randomAlphabetic(10);
+        String firstName = RandomStringUtils.randomAlphabetic(10);
+
+        return new Courier(login, null, firstName);
+    }
+    public static Courier getRandomLoginAndPassword() {
+        String login = RandomStringUtils.randomAlphabetic(10);
+        String password = RandomStringUtils.randomAlphabetic(10);
+
+        return new Courier(login, password, null);
+    }
 }

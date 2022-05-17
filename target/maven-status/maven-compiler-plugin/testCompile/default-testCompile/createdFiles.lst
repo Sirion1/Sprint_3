@@ -1,7 +1,7 @@
-Login\CourierLoginTest.class
+login\CourierLoginTest.class
 order\OrderTest.class
-Registration\CourierTest.class
-Registration\CourierRegisterWithoutDataTest.class
 order\OrderTestWithColorTest.class
-Login\CourierLoginIncorrectDataTest.class
+registration\CourierRegisterWithoutDataTest.class
+login\CourierLoginIncorrectDataTest.class
+registration\CourierTest.class
 order\GetOrdersListTest.class

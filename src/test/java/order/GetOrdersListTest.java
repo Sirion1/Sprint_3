@@ -2,28 +2,21 @@ package order;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
-import org.junit.Before;
+import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.assertNotEquals;
+import static order.OrderMake.getOrderIncorrectId;
 
 public class GetOrdersListTest {
-
-    private static OrderMake orderMake;
-
-    @Before
-    public void setup(){
-        orderMake = new OrderMake();
-    }
 
     @Test
     @DisplayName("Get Orders List")
     @Description("Получения списка всех заказов")
     public void getOrdersTest() {
         OrderList getOrderList = new OrderList();
-        OrderMake.getOrder(getOrderList);
+        String OrderMakeEquals = OrderMake.getOrder(getOrderList);
 
-        assertNotEquals(0, "orders");
+        Assert.assertEquals(null, OrderMakeEquals);
 
     }
     @Test
@@ -31,9 +24,9 @@ public class GetOrdersListTest {
     @Description("Получения списка всех заказов с неверным Id курьера")
     public void getOrdersIncorrectIdTest() {
         OrderList getOrderListIncorrectId = new OrderList();
-        OrderMake.getOrderIncorrectId(getOrderListIncorrectId);
+        String OrderMakeEquals = getOrderIncorrectId(getOrderListIncorrectId);
 
-        assertNotEquals(0, "orders");
+        Assert.assertEquals("Курьер с идентификатором 000000001 не найден", OrderMakeEquals);
 
     }
 }
